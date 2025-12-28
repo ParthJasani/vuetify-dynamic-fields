@@ -24,11 +24,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ParthJasani/vuetify-form-builder.git"
+    "url": "git+https://github.com/ParthJasani/vuetify-dynamic-fields.git.git"
   },
-  "homepage": "https://github.com/ParthJasani/vuetify-form-builder#readme",
+  "homepage": "https://github.com/ParthJasani/vuetify-dynamic-fields.git#readme",
   "bugs": {
-    "url": "https://github.com/ParthJasani/vuetify-form-builder/issues"
+    "url": "https://github.com/ParthJasani/vuetify-dynamic-fields.git/issues"
   },
   "keywords": ["vue", "vuetify", "form", "dynamic", "form-builder", "vuelidate"],
   "author": "",
