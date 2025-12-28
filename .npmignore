@@ -1,0 +1,10 @@
+example/
+node_modules/
+*.log
+.github/
+src/
+README.md
+vite.config.js
+example/vite.config.js
+/.vscode
+/.idea
