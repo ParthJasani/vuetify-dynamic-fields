@@ -31,6 +31,6 @@
     "url": "https://github.com/ParthJasani/vuetify-dynamic-fields.git/issues"
   },
   "keywords": ["vue", "vuetify", "form", "dynamic", "form-builder", "vuelidate"],
-  "author": "",
+  "author": "Parth Jasani",
   "license": "MIT"
 }
