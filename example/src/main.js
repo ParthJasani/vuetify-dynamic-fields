@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-// Use the built ESM bundle from the workspace `dist/` to avoid importing .vue from outside the example root
-import DynamicFieldsPlugin from '../../dist/vue-dynamic-fields-generator.es.js'
+// Use the published package in the example (import only from npm)
+import DynamicFieldsPlugin from 'vuetify-dynamic-fields'
 
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
