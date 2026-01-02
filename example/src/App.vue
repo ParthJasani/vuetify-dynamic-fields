@@ -2,16 +2,34 @@
   <v-app>
     <v-main>
       <v-container>
-        <h2>Dynamic Fields Example</h2>
+        <h2 class="mb-4">Dynamic Vuetify Fields generator with JSON <a href="https://www.npmjs.com/package/vuetify-dynamic-fields" class="text-black">(vuetify-dynamic-fields)</a></h2>
         <DynamicFieldsGenerator :fields="schema" :values="valuesRef" @update:values="updateValues" ref="dyn" />
         <v-btn class="mt-4" @click="submit">Validate & Log</v-btn>
+        <v-row class="mt-6" align="start" dense>
+          <v-col cols="12" md="6">
+            <v-card>
+              <v-card-title>Form Schema (JSON)</v-card-title>
+              <v-card-text>
+                <pre class="json-pre">{{ schemaJson }}</pre>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-card>
+              <v-card-title>Form Values (JSON)</v-card-title>
+              <v-card-text>
+                <pre class="json-pre">{{ valuesJson }}</pre>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 const valuesRef = ref({})
 const dyn = ref(null)
 
@@ -238,8 +256,15 @@ function submit() {
     })
   }
 }
+
+const schemaJson = computed(() => JSON.stringify(schema, null, 2))
+const valuesJson = computed(() => JSON.stringify(valuesRef.value || {}, null, 2))
 </script>
 
-<style>
-/* example styles */
+<style scoped>
+.json-pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 </style>

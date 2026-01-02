@@ -1,4 +1,4 @@
-# vuetify-dynamic-fields
+# vuetify-dynamic-fields [![npm](https://img.shields.io/npm/v/vuetify-dynamic-fields)](https://www.npmjs.com/package/vuetify-dynamic-fields)
 
 A small Vue 3 plugin that exposes a `DynamicFieldsGenerator` component for generating dynamic Vuetify form fields driven by a JSON schema.
 

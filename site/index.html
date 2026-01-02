@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>vuetify-dynamic-fields — Dynamic Vuetify forms from JSON</title>
+  <meta name="description" content="Generate Vuetify form fields from a JSON schema for Vue 3. Plugin, usage, options and examples." />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="hero">
+  <div class="container">
+    <div class="brand">
+      <div class="logo">VDF</div>
+
+      <div class="brand-text">
+        <h1>vuetify-dynamic-fields</h1>
+        <p class="tagline">
+          Generate Vue 3 + Vuetify form fields dynamically from a JSON schema — fast, consistent, and extensible.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="https://www.npmjs.com/package/vuetify-dynamic-fields" target="_blank" rel="noopener">
+          View on npm
+        </a>
+        <a class="btn" href="https://github.com/ParthJasani/vuetify-dynamic-fields" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="grid two">
+    <article class="card">
+      <h2>Quick install</h2>
+      <p class="note">
+        Peer dependencies:
+        <strong>vue</strong> (≥3),
+        <strong>vuetify</strong> (≥3),
+        <strong>@vuelidate/core</strong>,
+        <strong>@vuelidate/validators</strong>
+      </p>
+
+      <pre class="code">npm install vuetify-dynamic-fields
+npm install vue vuetify @vuelidate/core @vuelidate/validators</pre>
+
+      <h3>Quick usage</h3>
+      <pre class="code">// app setup
+import { createApp } from 'vue'
+import App from './App.vue'
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import DynamicFieldsPlugin from 'vuetify-dynamic-fields'
+
+const app = createApp(App)
+app.use(createVuetify())
+app.use(DynamicFieldsPlugin)
+app.mount('#app')</pre>
+    </article>
+
+    <aside class="card">
+      <h3>Live example</h3>
+      <p class="note">Run the included example locally.</p>
+
+      <a class="btn primary" href="../example/index.html" target="_blank">
+        Open local example
+      </a>
+
+      <pre class="code">cd example
+npm install
+npm run dev</pre>
+    </aside>
+  </section>
+
+  <section class="card wide">
+    <h2>Available options (field schema)</h2>
+    <p>
+      The plugin exposes a global component
+      <strong>&lt;DynamicFieldsGenerator /&gt;</strong>.
+      Each field is defined using the following properties:
+    </p>
+
+    <div class="grid two">
+      <ul>
+        <li><strong>name</strong> — unique key (required)</li>
+        <li><strong>type</strong> — string, text, email, url, integer, number</li>
+        <li><strong>title / label</strong> — displayed label</li>
+        <li><strong>default</strong> — default value</li>
+        <li><strong>required</strong> — boolean</li>
+        <li><strong>min / max</strong> — numeric range</li>
+      </ul>
+
+      <ul>
+        <li><strong>minLength / maxLength</strong> — text limits</li>
+        <li><strong>pattern</strong> — regex validation</li>
+        <li><strong>options</strong> — select / radio options</li>
+        <li><strong>itemTitle / itemValue</strong> — option mapping</li>
+        <li><strong>multiple</strong> — multi-select</li>
+        <li><strong>props</strong> — forwarded Vuetify props</li>
+      </ul>
+    </div>
+
+    <h3>Validation & messages</h3>
+    <ul>
+      <li><strong>messages</strong> — custom validator messages</li>
+      <li><strong>custom</strong> — custom validator function</li>
+      <li><strong>customMessage</strong> — message for custom validator</li>
+    </ul>
+  </section>
+
+  <section class="card wide">
+    <h2>Example field</h2>
+    <pre class="code">{
+  name: 'theme',
+  type: 'select',
+  title: 'Theme',
+  required: true,
+  options: [
+    { id: 'light', name: 'Light' },
+    { id: 'dark', name: 'Dark' }
+  ],
+  itemTitle: 'name',
+  itemValue: 'id',
+  props: {
+    placeholder: 'Select a theme',
+    variant: 'outlined',
+    density: 'compact'
+  },
+  messages: {
+    required: 'Choose a theme'
+  }
+}</pre>
+
+    <h3>Component API</h3>
+    <ul>
+      <li><strong>validate()</strong> → Promise&lt;boolean&gt;</li>
+      <li><strong>getValues()</strong> → object</li>
+      <li><strong>reset(values?)</strong></li>
+    </ul>
+  </section>
+
+  <section class="card wide">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="../example/dist/index.html">Local example</a></li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <small>© vuetify-dynamic-fields • Built for Vue 3 + Vuetify 3</small>
+     Developed by
+    <a href="http://parthjasani.com/" target="_blank" rel="noopener">
+      Parth Jasani
+    </a>
+  </footer>
+
+  
+</main>
+</body>
+</html>
