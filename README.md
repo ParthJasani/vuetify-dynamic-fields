@@ -32,15 +32,15 @@ app.mount('#app')
 
 You can also import the `DynamicFieldsGenerator` component directly from the package if you prefer a per-component import.
 
-## Live Demo
 
-👉 **https://parthjasani.github.io/vuetify-dynamic-fields/**
-
-This demo showcases `DynamicFieldsGenerator` rendering multiple Vuetify form controls from a JSON schema, including validation with Vuelidate.
 
 **Example app (local development)**
 
 The `example/` folder contains a minimal Vite + Vuetify app used for development and demonstration.
+
+- 🔗 **Homepage / Docs:** https://parthjasani.github.io/vuetify-dynamic-fields/  
+- 🔗 **Live demo:** https://parthjasani.github.io/vuetify-dynamic-fields/
+- 🧪 **Local dev:** see instructions below
 
 To run the example locally:
 
