@@ -1,4 +1,6 @@
-# vuetify-dynamic-fields [![npm](https://img.shields.io/npm/v/vuetify-dynamic-fields)](https://www.npmjs.com/package/vuetify-dynamic-fields)
+# vuetify-dynamic-fields 
+[![npm](https://img.shields.io/npm/v/vuetify-dynamic-fields)](https://www.npmjs.com/package/vuetify-dynamic-fields)
+[![demo](https://img.shields.io/badge/demo-live-brightgreen)](https://parthjasani.github.io/vuetify-dynamic-fields/)
 
 A small Vue 3 plugin that exposes a `DynamicFieldsGenerator` component for generating dynamic Vuetify form fields driven by a JSON schema.
 
@@ -29,6 +31,12 @@ app.mount('#app')
 ```
 
 You can also import the `DynamicFieldsGenerator` component directly from the package if you prefer a per-component import.
+
+## Live Demo
+
+👉 **https://parthjasani.github.io/vuetify-dynamic-fields/**
+
+This demo showcases `DynamicFieldsGenerator` rendering multiple Vuetify form controls from a JSON schema, including validation with Vuelidate.
 
 **Example app (local development)**
 
