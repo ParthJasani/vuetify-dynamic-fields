@@ -13,6 +13,7 @@
   "scripts": {
     "build": "vite build",
     "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "example:install": "cd example && npm install",
     "example:dev": "cd example && npm run dev"
   },
