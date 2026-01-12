@@ -69,7 +69,7 @@ Each field in the schema is an object describing a single form control. Fields a
 
 - `name` (string, required): unique key for the field values.
 - `type` (string, required): control type. Common values: `string`, `text`, `email`, `url`, `integer`, `number`, `select`, `autocomplete`, `combobox`, `checkbox`, `radio`, `radio-group`.
-- `title` (string): label/title for the control.
+- `label` (string): label/title for the control.
 - `required` (boolean): whether the field is required.
 - `default`: default value for the field.
 - `min`, `max` (number): numeric range limits for `integer`/`number` fields.
@@ -90,7 +90,7 @@ Example field (excerpt from the `example` app):
 {
   name: 'site_name',
   type: 'string',
-  title: 'Site Name',
+  label: 'Site Name',
   required: true,
   default: 'Affidash',
   minLength: 3,
@@ -106,7 +106,7 @@ Another example with options:
 {
   name: 'theme',
   type: 'select',
-  title: 'Theme',
+  label: 'Theme',
   required: true,
   options: [{ id: 'light', name: 'Light' }, { id: 'dark', name: 'Dark' }],
   itemTitle: 'name',

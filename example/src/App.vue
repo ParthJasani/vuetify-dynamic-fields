@@ -40,7 +40,7 @@ const schema = [
   {
     name: 'site_name',
     type: 'string',
-    title: 'Site Name',
+    label: 'Site Name',
     required: true,
     default: 'Affidash',
     minLength: 3,
@@ -62,7 +62,7 @@ const schema = [
   {
     name: 'admin_email',
     type: 'email',
-    title: 'Admin Email',
+    label: 'Admin Email',
     required: true,
     messages: { email: 'Please enter a valid email address', required: 'Admin email required' },
     props: { placeholder: 'admin@example.com', density: 'compact' }
@@ -72,7 +72,7 @@ const schema = [
   {
     name: 'website',
     type: 'url',
-    title: 'Website',
+    label: 'Website',
     required: false,
     messages: { url: 'Please provide a valid website url' },
     props: { placeholder: 'https://example.com' }
@@ -82,7 +82,7 @@ const schema = [
   {
     name: 'max_users',
     type: 'integer',
-    title: 'Max Users',
+    label: 'Max Users',
     required: true,
     min: 1,
     max: 1000,
@@ -98,7 +98,7 @@ const schema = [
   {
     name: 'discount_rate',
     type: 'number',
-    title: 'Discount Rate (%)',
+    label: 'Discount Rate (%)',
     required: false,
     min: 0,
     max: 100,
@@ -110,7 +110,7 @@ const schema = [
   {
     name: 'sku',
     type: 'string',
-    title: 'SKU',
+    label: 'SKU',
     required: false,
     pattern: '^[A-Z0-9\\-]+$',
     messages: { pattern: 'SKU must be uppercase letters, numbers or hyphens' },
@@ -121,7 +121,7 @@ const schema = [
   {
     name: 'description',
     type: 'text',
-    title: 'Description',
+    label: 'Description',
     required: false,
     minLength: 10,
     messages: { minLength: 'Please write at least 10 characters' },
@@ -132,10 +132,10 @@ const schema = [
   {
     name: 'theme',
     type: 'select',
-    title: 'Theme',
+    label: 'Theme',
     required: true,
     options: [{ id: 'light', name: 'Light' }, { id: 'dark', name: 'Dark' }],
-    itemTitle: 'name',
+    itemlabel: 'name',
     itemValue: 'id',
     messages: { required: 'Choose a theme' },
     props: {
@@ -150,13 +150,13 @@ const schema = [
   {
     name: 'country',
     type: 'autocomplete',
-    title: 'Country',
+    label: 'Country',
     required: true,
     options: [
       { id: 'us', name: 'United States', label: 'United States' },
       { id: 'ca', name: 'Canada', label: 'Canada' }
     ],
-    itemTitle: 'name',
+    itemlabel: 'name',
     itemValue: 'id',
     messages: { required: 'Please pick a country' },
     props: {
@@ -170,7 +170,7 @@ const schema = [
   {
     name: 'features',
     type: 'combobox',
-    title: 'Enabled Features',
+    label: 'Enabled Features',
     required: false,
     multiple: true,
     options: ['chat', 'reports', 'billing'],
@@ -182,7 +182,7 @@ const schema = [
   {
     name: 'is_active',
     type: 'checkbox',
-    title: 'Active',
+    label: 'Active',
     default: true,
     required: false,
     props: { density: 'comfortable' },
@@ -193,7 +193,7 @@ const schema = [
   {
     name: 'plan',
     type: 'radio',
-    title: 'Plan',
+    label: 'Plan',
     required: true,
     options: [
       { id: 'free', name: 'Free', value: 'free', props: { disabled: false } },
@@ -208,7 +208,7 @@ const schema = [
   {
     name: 'delivery_option',
     type: 'radio-group',
-    title: 'Delivery Option',
+    label: 'Delivery Option',
     required: true,
     options: [
       { value: 'standard', label: 'Standard' },
@@ -222,7 +222,7 @@ const schema = [
   {
     name: 'advanced_choice',
     type: 'select',
-    title: 'Advanced Choice',
+    label: 'Advanced Choice',
     required: false,
     options: [
       { id: 1, name: 'Choice A', value: 1, props: { class: 'choice-a' } },
@@ -235,7 +235,7 @@ const schema = [
   {
     name: 'custom_code',
     type: 'string',
-    title: 'Custom Code',
+    label: 'Custom Code',
     required: true,
     custom: (v /*, field */) => {
       // must start with 'X-' and be 5..10 chars in total

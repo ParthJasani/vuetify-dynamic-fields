@@ -12,7 +12,7 @@
         </template>
         <template v-else>
           <component :is="fieldComponent(field.type)" v-model="formState[field.name]"
-            v-bind="{ ...componentProps(field), ...(field.props || {}) }" :error-messages="fieldErrors(field.name)"
+            v-bind="{ ...componentProps(field), ...(field.props || {}) }" :error-messages="fieldErrors(field?.name)"
             @update:model-value="onFieldUpdate(field.name, $event)" @blur="touchField(field.name)">
             <template v-if="field.type === 'autocomplete'" #item="{ item, props }">
               <v-list-item v-bind="props">{{ item.label ?? item.name ?? item }}</v-list-item>
@@ -143,6 +143,8 @@ function fieldComponent(type) {
       return 'v-text-field'
     case 'number':
       return 'v-number-input'
+    case 'file-input':
+      return 'v-file-input';
     case 'datepicker':
       return 'v-date-input';
     case 'select':
@@ -238,9 +240,11 @@ function touchField(name) {
 }
 
 function fieldErrors(key) {
-  const state = getValidationState(key)
+  const state = getValidationState(key);
   if (!state) return []
-  if (!state.$dirty && !state.$invalid) return []
+  if (!state.$dirty && !state.$invalid){
+     return []
+  }
   const errs = (state.$errors || []).map((e) => e.$message || fallbackMsg(e))
   return errs
 }
