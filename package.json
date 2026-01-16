@@ -1,6 +1,6 @@
 {
   "name": "vuetify-dynamic-fields",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Generates dynamic Vuetify form fields from a JSON schema for Vue 3 + Vuetify",
   "main": "src/index.js",
   "type": "module",
