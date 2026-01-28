@@ -39,7 +39,7 @@ You can also import the `DynamicFieldsGenerator` component directly from the pac
 The `example/` folder contains a minimal Vite + Vuetify app used for development and demonstration.
 
 - 🔗 **Homepage / Docs:** https://parthjasani.github.io/vuetify-dynamic-fields/  
-- 🔗 **Live demo:** hhttps://parthjasani.github.io/vuetify-dynamic-fields/example.html
+- 🔗 **Live demo:** https://parthjasani.github.io/vuetify-dynamic-fields/example.html
 - 🧪 **Local dev:** see instructions below
 
 To run the example locally:
